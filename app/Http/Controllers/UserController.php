@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\thanhvien;
+use App\loaisanpham;
+use App\monthethao;
 class UserController extends Controller
 {
   // Hien trang chu
   public function trangchu()
   {
-    return view('user_interface.index');
+    $loai = loaisanpham::all();
+    $mon = monthethao::all();
+    return view('user_interface.index',['loai'=>$loai,'mon'=>$mon]);
   }
 
   // Hien giao dien trang dang ky
@@ -46,6 +50,7 @@ class UserController extends Controller
       return view('user_interface.login',['thongbao','dang nhap sai']);
     }
   }
+
   // Hien giao dien trang dang nhap
   public function getdangnhap()
   {

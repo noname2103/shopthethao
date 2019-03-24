@@ -99,39 +99,24 @@
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<div class="header-left-menu">
 							<div class="welcome-info">
-								Welcome <span>BootExperts</span>
+								Welcome <span>SanninShop</span>
 							</div>
 							<div class="currenty-converter">
 								<form method="post" action="#" id="currency-set">
 									<div class="current-currency">
-										<span class="cur-label">Currency : </span><strong>USD</strong>
+										<span class="cur-label">Đơn vị : </span><strong>USD</strong>
 									</div>
 									<ul class="currency-list currency-toogle">
 										<li>
-											<a title="Dollar (USD)" href="#">Dollar (USD)</a>
-										</li>
-										<li>
-										<a title="Euro (EUR)" href="#">Euro (EUR)</a>
+											<a title="Dollar (USD)" href="#">Việt Nam (USD)</a>
 										</li>
 									</ul>
 								</form>
 							</div>
 							<div class="selected-language">
 								<div class="current-lang">
-									<span class="current-lang-label">Language : </span><strong>English</strong>
+									<span class="current-lang-label">Ngôn ngữ : </span><strong>Việt Nam</strong>
 								</div>
-								<ul class="languages-choose language-toogle">
-									<li>
-										<a href="#" title="English">
-											<span>English</span>
-										</a>
-									</li>
-									<li>
-										<a href="#" title="Français (French)">
-											<span>Français</span>
-										</a>
-									</li>
-								</ul>
 							</div>
 						</div>
 					</div>
@@ -176,37 +161,11 @@
 							<form action="#" method="get" class="search-form-cat">
 								<div class="search-product form-group">
 									<select name="catsearch" class="cat-search">
-										<option value="">Categories</option>
-										<option value="2">--Women</option>
-										<option value="3">---T-Shirts</option>
-										<option value="4">--Men</option>
-										<option value="5">----Shoose</option>
-										<option value="6">--Dress</option>
-										<option value="7">----Tops</option>
-										<option value="8">---Casual</option>
-										<option value="9">--Evening</option>
-										<option value="10">--Summer</option>
-										<option value="11">---sports</option>
-										<option value="12">--day</option>
-										<option value="13">--evening</option>
-										<option value="14">-----Blouse</option>
-										<option value="15">--handba</option>
-										<option value="16">--phone</option>
-										<option value="17">-house</option>
-										<option value="18">--Beauty</option>
-										<option value="19">--health</option>
-										<option value="20">---clothing</option>
-										<option value="21">---kids</option>
-										<option value="22">--Dresse</option>
-										<option value="22">---Casual</option>
-										<option value="23">--day</option>
-										<option value="24">--evening</option>
-										<option value="24">---Blouse</option>
-										<option value="25">-handb</option>
-										<option value="66">--phone</option>
-										<option value="27">---house</option>
+                    <option value="">Mục tìm kiếm</option>
+                    @foreach($loai as $l) <option value="">{{$l->TenLoai}}</option> @endforeach
+                    @foreach($mon as $m) <option value="">{{$m->TenMon}}</option> @endforeach
 									</select>
-									<input type="text" class="form-control search-form" name="s" placeholder="Enter your search key ... " />
+									<input type="text" class="form-control search-form" name="s" placeholder="Nhập tìm kiếm ... " />
 									<button class="search-button" value="Search" name="s" type="submit">
 										<i class="fa fa-search"></i>
 									</button>
@@ -229,10 +188,10 @@
 							<div class="shopping-cart">
 								<a class="shop-link" href="cart.html" title="View my shopping cart">
 									<i class="fa fa-shopping-cart cart-icon"></i>
-									<b>My Cart</b>
-									<span class="ajax-cart-quantity">2</span>
+									<b>Giỏ hàng</b>
+									<span class="ajax-cart-quantity"> </span>
 								</a>
-								<div class="shipping-cart-overly">
+								<!-- <div class="shipping-cart-overly">
 									<div class="shipping-item">
 										<span class="cross-icon"><i class="fa fa-times-circle"></i></span>
 										<div class="shipping-item-image">
@@ -268,7 +227,7 @@
 									<div class="shipping-checkout-btn">
 										<a href="checkout.html">Check out <i class="fa fa-chevron-right"></i></a>
 									</div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
@@ -278,31 +237,26 @@
 						<div class="mainmenu">
 							<nav>
 								<ul class="list-inline mega-menu">
-									<li class="active"><a href="index.html">Home</a>
+									<li class="active"><a href="{{route('trangchu')}}">Trang chủ</a>
 										<!-- DROPDOWN MENU START -->
-										<div class="home-var-menu">
-											<ul class="home-menu">
-												<li><a href="index.html">Home variation 1</a></li>
-												<li><a href="index-2.html">Home variation 2</a></li>
-											</ul>
-										</div>
 										<!-- DROPDOWN MENU END -->
 									</li>
 									<li>
-										<a href="shop-gird.html">Women</a>
+										<a href="shop-gird.html">Loại sản phẩm</a>
 										<!-- DRODOWN-MEGA-MENU START -->
 										<div class="drodown-mega-menu">
 											<div class="left-mega col-xs-6">
 												<div class="mega-menu-list">
-													<a class="mega-menu-title" href="shop-gird.html">TOPS</a>
 													<ul>
-														<li><a href="shop-gird.html">T-shirts</a></li>
-														<li><a href="shop-gird.html">clothing</a></li>
-														<li><a href="shop-gird.html">Delivery</a></li>
+                            @foreach($loai as $l)
+														<!-- <li><a href="shop-gird.html">T-shirts</a></li>
+														<li><a href="shop-gird.html">clothing</a></li>-->
+														<li><a href="shop-gird.html">{{$l->TenLoai}}</a></li>
+                            @endforeach
 													</ul>
 												</div>
 											</div>
-											<div class="right-mega col-xs-6">
+											<!-- <div class="right-mega col-xs-6">
 												<div class="mega-menu-list">
 													<a class="mega-menu-title" href="shop-gird.html">Prodect</a>
 													<ul>
@@ -312,20 +266,20 @@
 														<li><a href="shop-gird.html">Delivery</a></li>
 													</ul>
 												</div>
-											</div>
+											</div> -->
 										</div>
 										<!-- DRODOWN-MEGA-MENU END -->
 									</li>
 									<li>
-										<a href="shop-gird.html">Men</a>
+										<a href="shop-gird.html">Môn thể thao</a>
 										<!-- DRODOWN-MEGA-MENU START -->
 										<div class="drodown-mega-menu">
 											<div class="left-mega col-xs-6">
 												<div class="mega-menu-list">
 													<ul>
-														<li><a href="shop-gird.html">T-shirts</a></li>
-														<li><a href="shop-gird.html">clothing</a></li>
-														<li><a href="shop-gird.html">Delivery</a></li>
+														@foreach($mon as $m)
+                              <li><a href="shop-gird.html">{{$m->TenMon}}</a></li>
+                            @endforeach
 													</ul>
 												</div>
 											</div>
@@ -333,9 +287,9 @@
 										<!-- DRODOWN-MEGA-MENU END -->
 									</li>
 									<li>
-										<a href="shop-gird.html">clothing</a>
+										<a href="shop-gird.html">Khuyến mãi</a>
 										<!-- DRODOWN-MEGA-MENU START -->
-										<div class="drodown-mega-menu">
+										<!-- <div class="drodown-mega-menu">
 											<div class="left-mega col-xs-6">
 												<div class="mega-menu-list">
 													<a class="mega-menu-title" href="shop-gird.html">TOPS</a>
@@ -373,13 +327,13 @@
 													</ul>
 												</div>
 											</div>
-										</div>
+										</div> -->
 										<!-- DRODOWN-MEGA-MENU END -->
 									</li>
 									<li>
-										<a href="shop-gird.html">Tops</a>
+										<a href="shop-gird.html">Hỗ trợ</a>
 										<!-- DRODOWN-MEGA-MENU START -->
-										<div class="drodown-mega-menu">
+										<!-- <div class="drodown-mega-menu">
 											<div class="left-mega col-xs-4">
 												<div class="mega-menu-list">
 													<a class="mega-menu-title" href="shop-gird.html">TOPS</a>
@@ -430,55 +384,9 @@
 													</ul>
 												</div>
 											</div>
-										</div>
+										</div> -->
 										<!-- DRODOWN-MEGA-MENU END -->
 									</li>
-									<li>
-										<a href="shop-gird.html">T-shirts</a>
-										<!-- DRODOWN-MEGA-MENU START -->
-										<div class="drodown-mega-menu">
-											<div class="left-mega col-xs-6">
-												<div class="mega-menu-list">
-													<a class="mega-menu-title" href="shop-gird.html">TOPS</a>
-													<ul>
-														<li><a href="shop-gird.html">T-shirts</a></li>
-														<li><a href="shop-gird.html">clothing</a></li>
-														<li><a href="shop-gird.html">Delivery</a></li>
-													</ul>
-												</div>
-												<div class="mega-menu-list">
-													<a class="mega-menu-title" href="shop-gird.html">new product</a>
-													<ul>
-														<li><a href="shop-gird.html">T-shirts</a></li>
-														<li><a href="shop-gird.html">clothing</a></li>
-														<li><a href="shop-gird.html">Delivery</a></li>
-													</ul>
-												</div>
-											</div>
-											<div class="right-mega col-xs-6">
-												<div class="mega-menu-list">
-													<a class="mega-menu-title" href="shop-gird.html">Prodect</a>
-													<ul>
-														<li><a href="shop-gird.html">T-shirts</a></li>
-														<li><a href="shop-gird.html">clothing</a></li>
-														<li><a href="shop-gird.html">Watch</a></li>
-														<li><a href="shop-gird.html">Delivery</a></li>
-													</ul>
-												</div>
-												<div class="mega-menu-list">
-													<a class="mega-menu-title" href="shop-gird.html">best sale month</a>
-													<ul>
-														<li><a href="shop-gird.html">T-shirts</a></li>
-														<li><a href="shop-gird.html">clothing</a></li>
-														<li><a href="shop-gird.html">Delivery</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<!-- DRODOWN-MEGA-MENU END -->
-									</li>
-									<li><a href="#">Delivery</a></li>
-									<li><a href="about-us.html">About us</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -566,8 +474,8 @@
               <div class="footer-top-left">
                 <!-- NEWSLETTER-AREA START -->
                 <div class="newsletter-area">
-                  <h2>Newsletter</h2>
-                  <p>Subscribe to our mailing list to receive updates on new arrivals, special offers and other discount information.</p>
+                  <h2>Ý</h2>
+                  <p>Theo dõi chúng tôi để nhận được các thông tin mới nhất từ cửa hàng của chúng tôi từ những sản phẩm mới ,các khuyến mãi đặc biệt.</p>
                   <form action="#">
                     <div class="form-group newsletter-form-group">
                       <input type="text" class="form-control newsletter-form" placeholder="Enter your e-mail">
@@ -786,6 +694,5 @@
     <!-- main js -->
         <script src="js/main.js"></script>
     </body>
-
 <!-- Nulled by http://www.baobinh.net by tieulonglanh -->
 </html>
