@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <base href="{{asset('')}}">
-        <title>Home Variation 2</title>
+        <title>SanninShop</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -104,13 +104,8 @@
 							<div class="currenty-converter">
 								<form method="post" action="#" id="currency-set">
 									<div class="current-currency">
-										<span class="cur-label">Đơn vị : </span><strong>USD</strong>
+										<span class="cur-label">Đơn vị : VNĐ</span>
 									</div>
-									<ul class="currency-list currency-toogle">
-										<li>
-											<a title="Dollar (USD)" href="#">Việt Nam (USD)</a>
-										</li>
-									</ul>
 								</form>
 							</div>
 							<div class="selected-language">
@@ -129,8 +124,8 @@
 									<!-- <li><a href="checkout.html">Check Out</a></li> -->
 									<li><a href="my-account.html">Tài khoản</a></li>
 									<li><a href="cart.html">Giỏ hàng</a></li>
-									<li><a href="registration.html">Đăng nhập</a></li>
-                  <li><a href="registration.html">Đăng ký</a></li>
+									<li><a href="{{route('getdangnhap')}}">Đăng nhập</a></li>
+                  <li><a href="{{route('getdangky')}}">Đăng ký</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -147,7 +142,7 @@
 					<div class="col-sm-12">
 						<!-- LOGO START -->
 						<div class="logo">
-							<a href="index.html"><img src="img/logo2.png" alt="bstore logo" /></a>
+							<a href="{{route('trangchu')}}"><img src="img/logo1.png" alt="bstore logo" /></a>
 						</div>
 						<!-- LOGO END -->
 						<!-- HEADER-RIGHT-CALLUS START -->
@@ -251,7 +246,7 @@
                             @foreach($loai as $l)
 														<!-- <li><a href="shop-gird.html">T-shirts</a></li>
 														<li><a href="shop-gird.html">clothing</a></li>-->
-														<li><a href="shop-gird.html">{{$l->TenLoai}}</a></li>
+														<li><a href="danh-sach&loai{{$l->MaLoai}}.html">{{$l->TenLoai}}</a></li>
                             @endforeach
 													</ul>
 												</div>
@@ -278,7 +273,7 @@
 												<div class="mega-menu-list">
 													<ul>
 														@foreach($mon as $m)
-                              <li><a href="shop-gird.html">{{$m->TenMon}}</a></li>
+                              <li><a href="danh-sach&mon{{$m->MaMon}}.html">{{$m->TenMon}}</a></li>
                             @endforeach
 													</ul>
 												</div>
@@ -474,11 +469,11 @@
               <div class="footer-top-left">
                 <!-- NEWSLETTER-AREA START -->
                 <div class="newsletter-area">
-                  <h2>Ý</h2>
+                  <h2>SanninShop</h2>
                   <p>Theo dõi chúng tôi để nhận được các thông tin mới nhất từ cửa hàng của chúng tôi từ những sản phẩm mới ,các khuyến mãi đặc biệt.</p>
                   <form action="#">
                     <div class="form-group newsletter-form-group">
-                      <input type="text" class="form-control newsletter-form" placeholder="Enter your e-mail">
+                      <input type="text" class="form-control newsletter-form" placeholder="Nhập vào email của bạn...">
                       <input type="submit" class="newsletter-btn" name="submit" value="Subscribe" />
                     </div>
                   </form>
@@ -486,13 +481,13 @@
                 <!-- NEWSLETTER-AREA END -->
                 <!-- ABOUT-US-AREA START -->
                 <div class="about-us-area">
-                  <h2>About Us</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  <h2>Về chúng tôi</h2>
+                  <p>Với uy tín hàng đầu,chúng tôi là 1 những shop hàng đầu Việt Nam về lĩnh vực thể thao.Với những nỗ lực không ngừng chúng tôi sẽ cố gắng vươn ra tầm châu lục với những tiêu chí: An toàn, đẹp và chất lượng</p>
                 </div>
                 <!-- ABOUT-US-AREA END -->
                 <!-- FLLOW-US-AREA START -->
                 <div class="fllow-us-area">
-                  <h2>Follow us</h2>
+                  <h2>Theo dõi chúng tôi với</h2>
                   <ul class="flow-us-link">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -511,22 +506,22 @@
                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-sm">
                     <!-- STATICBLOCK START -->
                     <div class="staticblock">
-                      <h2>static block</h2>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s<br />when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                      <h2>★ ★ ★ ★ ★ </h2>
+                      <p>Shop thể thao sanin, Shop the thao uy tin, giày thể thao, quần áo thể thao, dụng cụ và phụ kiện thể thao, đồ thể dục, đồ bóng đá, quần áo bóng rổ,quần áo cầu lông, quần áo tennis, đồ bơi, giày đá banh Nike, Adidas, giày bóng rổ, giày chạy bộ, đặt áo đá bóng, đặt áo bóng rổ, đồng phục thể dục, áo lớp, áo trường. Nhận đặt làm in quần áo bóng đá, bóng rổ theo yêu cầu, quần áo bóng đá Thái Lan, quần áo bóng đá tay dài, áo bóng đá CLB, quốc gia, giày chạy bộ, túi đựng giày, balo thể thao, áo bó body tay dài...Chuyên cung cấp các mặt hàng thể thao theo nhu cầu - Giao hàng tận nơi </p>
                     </div>
                     <!-- STATICBLOCK END -->
                   </div>
                   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <!-- STORE-INFORMATION START -->
                     <div class="Store-Information">
-                      <h2>Store Information</h2>
+                      <h2>Thông tin shop</h2>
                       <ul>
                         <li>
                           <div class="info-lefticon">
                             <i class="fa fa-map-marker"></i>
                           </div>
                           <div class="info-text">
-                            <p>My Company, 42 avenue des Champs Elysées 75000 Paris France </p>
+                            <p>Việt Nam,quận 9,Hutech </p>
                           </div>
                         </li>
                         <li>
@@ -534,7 +529,7 @@
                             <i class="fa fa-phone"></i>
                           </div>
                           <div class="info-text call-lh">
-                            <p>Call us now : 0123-456-789</p>
+                            <p>Điện thoại liên hệ : 0123-456-789</p>
                           </div>
                         </li>
                         <li>
@@ -542,7 +537,7 @@
                             <i class="fa fa-envelope-o"></i>
                           </div>
                           <div class="info-text">
-                            <p>Email : <a href="mailto:sales@yourcompany.com"><i class="fa fa-angle-double-right"></i> sales@yourcompany.com</a></p>
+                            <p>Email : <a href="mailto:trungminhminh@gmail.com"><i class="fa fa-angle-double-right"></i> sports@saninshop.com</a></p>
                           </div>
                         </li>
                       </ul>
@@ -567,12 +562,12 @@
                     <!-- FOTTER-MENU-WIDGET START -->
                     <div class="fotter-menu-widget">
                       <div class="single-f-widget">
-                        <h2>Categories</h2>
+                        <h2>Loại sản phẩm</h2>
                         <ul>
-                          <li><a href="shop-gird.html"><i class="fa fa-angle-double-right"></i>Women </a></li>
-                          <li><a href="shop-gird.html"><i class="fa fa-angle-double-right"></i>Men</a></li>
-                          <li><a href="shop-gird.html"><i class="fa fa-angle-double-right"></i>clothing</a></li>
-                          <li><a href="shop-gird.html"><i class="fa fa-angle-double-right"></i>kids</a></li>
+                          <li><a href="shop-gird.html"><i class="fa fa-angle-double-right"></i>Giày thể thao </a></li>
+                          <li><a href="shop-gird.html"><i class="fa fa-angle-double-right"></i>Dụng cụ y tế</a></li>
+                          <li><a href="shop-gird.html"><i class="fa fa-angle-double-right"></i>Vợt</a></li>
+                          <li><a href="shop-gird.html"><i class="fa fa-angle-double-right"></i>Áo</a></li>
                         </ul>
                       </div>
                     </div>
@@ -582,12 +577,13 @@
                     <!-- FOTTER-MENU-WIDGET START -->
                     <div class="fotter-menu-widget">
                       <div class="single-f-widget">
-                        <h2>Information</h2>
+                        <h2>Môn thể thao</h2>
                         <ul>
-                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Specials</a></li>
-                          <li><a href="#"><i class="fa fa-angle-double-right"></i>New products</a></li>
-                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Best sellers</a></li>
-                          <li><a href="contact-us.html"><i class="fa fa-angle-double-right"></i>Contact Us</a></li>
+                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Bóng đá</a></li>
+                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Bóng rổ</a></li>
+                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Tennis</a></li>
+                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Cầu lông</a></li>
+                          <!-- <li><a href="contact-us.html"><i class="fa fa-angle-double-right"></i>Contact Us</a></li> -->
                         </ul>
                       </div>
                     </div>
@@ -597,13 +593,12 @@
                     <!-- FOTTER-MENU-WIDGET START -->
                     <div class="fotter-menu-widget">
                       <div class="single-f-widget">
-                        <h2>My account</h2>
+                        <h2>Tài khoản</h2>
                         <ul>
-                          <li><a href="#"><i class="fa fa-angle-double-right"></i>My orders</a></li>
-                          <li><a href="#"><i class="fa fa-angle-double-right"></i>My credit slips</a></li>
-                          <li><a href="#"><i class="fa fa-angle-double-right"></i>My addresses</a></li>
-                          <li><a href="#"><i class="fa fa-angle-double-right"></i>My personal info</a></li>
-                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Sign out</a></li>
+                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Giỏ hàng</a></li>
+                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Thông tin</a></li>
+                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Chỉnh sửa</a></li>
+                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Đăng xuất</a></li>
                         </ul>
                       </div>
                     </div>
@@ -630,7 +625,7 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="copy-right">
-              <address>Copyright © 2015 <a href="http://bootexperts.com/">BootExperts</a> All Rights Reserved</address>
+              <address>Copyright © 2019 <a href="http://SanninShop.com/">SanninShop</a> All Rights Reserved</address>
             </div>
             <div class="scroll-to-top">
               <a href="#" class="bstore-scrollertop"><i class="fa fa-angle-double-up"></i></a>

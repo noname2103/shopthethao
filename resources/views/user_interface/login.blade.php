@@ -32,7 +32,7 @@
 									</div>
 									<div class="form-group primary-form-group p-info-group">
 										<label for="password">Mật khẩu<sup>*</sup></label>
-										<input type="password" value="" name="password" id="password" class="form-control input-feild">
+										<input type="password" value="" name="MatKhau" id="password" class="form-control input-feild">
 									</div>
 									<!-- <div class="form-group primary-form-group p-info-group">
 									<div class="form-group primary-form-group p-info-group"> -->

@@ -28,3 +28,7 @@ Route::post('dang-nhap.html','UserController@postdangnhap')->name('postdangnhap'
 Route::get('gio-hang.html','UserController@giohang')->name('giohang');
 // Hien trang xem chi tiet san pham
 Route::get('{slug}&p{mabv}.html','UserController@xemsanpham')->name('xemsanpham');
+//Hiện danh sách sp theo loai
+Route::get('danh-sach&loai{maloai}.html','UserController@danhsachsptheoloai')->name('danhsachsptheoloai');
+//Hiện danh sách sp theo mon the thao
+Route::get('danh-sach&mon{mamon}.html','UserController@danhsachsptheomon')->name('danhsachsptheomon');

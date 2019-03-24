@@ -2037,7 +2037,7 @@
 									<i class="fa fa-rocket"></i>
 								</div>
 								<div class="facality-text">
-									<h3 class="facality-heading-text">FREE SHIPPING</h3>
+									<h3 class="facality-heading-text">Miễn phí vận chuyển</h3>
 									<span>on order over $100</span>
 								</div>
 							</div>
