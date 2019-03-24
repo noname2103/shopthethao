@@ -1,12 +1,7 @@
 <!doctype html>
-<!--[if IE]><![endif]-->
-<!--[if lt IE 7 ]> <html lang="en" class="ie6">    <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="ie7">    <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="ie8">    <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="ie9">    <![endif]-->
+
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 
-<!-- Nulled by http://www.baobinh.net by tieulonglanh -->
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -146,11 +141,11 @@
 						<div class="header-right-menu">
 							<nav>
 								<ul class="list-inline">
-									<li><a href="checkout.html">Check Out</a></li>
-									<li><a href="wishlist.html">Wishlist</a></li>
-									<li><a href="my-account.html">My Account</a></li>
-									<li><a href="cart.html">My Cart</a></li>
-									<li><a href="registration.html">Sign in</a></li>
+									<!-- <li><a href="checkout.html">Check Out</a></li> -->
+									<li><a href="my-account.html">Tài khoản</a></li>
+									<li><a href="cart.html">Giỏ hàng</a></li>
+									<li><a href="registration.html">Đăng nhập</a></li>
+                  <li><a href="registration.html">Đăng ký</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -172,7 +167,7 @@
 						<!-- LOGO END -->
 						<!-- HEADER-RIGHT-CALLUS START -->
 						<div class="header-right-callus">
-							<h3>call us free</h3>
+							<h3>Gọi chúng tôi ngay</h3>
 							<span>0123-456-789</span>
 						</div>
 						<!-- HEADER-RIGHT-CALLUS END -->

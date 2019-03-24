@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('user_interface.index');
-});
-
+// Route::get('/', function () {
+//     return view('user_interface.index');
+// });
+//Hiện thị trang index
+Route::get('/',function(){
+  return view('user_interface.index');
+})->name('trangchu');
 // Hien trang dang ky nguoi dung
 Route::get('dang-ky.html','UserController@getdangky')->name('getdangky');
 // Xu ly thong tin dang ky thanh vien
