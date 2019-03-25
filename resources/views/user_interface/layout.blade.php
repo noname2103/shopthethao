@@ -182,7 +182,8 @@
 						<div class="shopping-cart-out pull-right">
 							<div class="shopping-cart">
 								<a class="shop-link" href="cart.html" title="View my shopping cart">
-									<i class="fa fa-shopping-cart cart-icon"></i>
+									<!-- <i class="fa fa-shopping-cart cart-icon"></i> -->
+                  <img src="img/Icons/cart.png" alt=""/>
 									<b>Giỏ hàng</b>
 									<span class="ajax-cart-quantity"> </span>
 								</a>
@@ -232,48 +233,30 @@
 						<div class="mainmenu">
 							<nav>
 								<ul class="list-inline mega-menu">
-									<li class="active"><a href="{{route('trangchu')}}">Trang chủ</a>
+									<li class="active"><a href="{{route('trangchu')}}"><img src="img/Icons/home.png" alt="" /> Trang chủ</a>
 										<!-- DROPDOWN MENU START -->
 										<!-- DROPDOWN MENU END -->
 									</li>
 									<li>
-										<a href="shop-gird.html">Loại sản phẩm</a>
+										<a href="shop-gird.html"><img src="img/Icons/category.png" alt="" /> Danh mục sản phẩm</a>
 										<!-- DRODOWN-MEGA-MENU START -->
 										<div class="drodown-mega-menu">
 											<div class="left-mega col-xs-6">
 												<div class="mega-menu-list">
 													<ul>
-                            @foreach($loai as $l)
-														<!-- <li><a href="shop-gird.html">T-shirts</a></li>
-														<li><a href="shop-gird.html">clothing</a></li>-->
-														<li><a href="danh-sach&loai{{$l->MaLoai}}.html">{{$l->TenLoai}}</a></li>
-                            @endforeach
-													</ul>
-												</div>
-											</div>
-											<!-- <div class="right-mega col-xs-6">
-												<div class="mega-menu-list">
-													<a class="mega-menu-title" href="shop-gird.html">Prodect</a>
-													<ul>
-														<li><a href="shop-gird.html">T-shirts</a></li>
-														<li><a href="shop-gird.html">clothing</a></li>
-														<li><a href="shop-gird.html">Watch</a></li>
-														<li><a href="shop-gird.html">Delivery</a></li>
-													</ul>
-												</div>
-											</div> -->
-										</div>
-										<!-- DRODOWN-MEGA-MENU END -->
-									</li>
-									<li>
-										<a href="shop-gird.html">Môn thể thao</a>
-										<!-- DRODOWN-MEGA-MENU START -->
-										<div class="drodown-mega-menu">
-											<div class="left-mega col-xs-6">
-												<div class="mega-menu-list">
-													<ul>
+                            <h2>Môn thể thao</h2>
 														@foreach($mon as $m)
-                              <li><a href="danh-sach&mon{{$m->MaMon}}.html">{{$m->TenMon}}</a></li>
+                              <li><a href="danh-sach&mon{{$m->MaMon}}.html"><img src="img/Icons/{{$m->HinhAnh}}"/> {{$m->TenMon}}</a></li>
+                            @endforeach
+													</ul>
+												</div>
+											</div>
+                      <div class="right-mega col-xs-6">
+                        <div class="mega-menu-list">
+													<ul>
+                            <h2>Loại sản phẩm</h2>
+                            @foreach($loai as $l)
+														<li><a href="danh-sach&loai{{$l->MaLoai}}.html"><img src="img/Icons/{{$l->HinhAnh}}"/> {{$l->TenLoai}}</a></li>
                             @endforeach
 													</ul>
 												</div>
@@ -282,7 +265,7 @@
 										<!-- DRODOWN-MEGA-MENU END -->
 									</li>
 									<li>
-										<a href="shop-gird.html">Khuyến mãi</a>
+										<a href="shop-gird.html"><img src="img/Icons/sale.png" alt=""/> Khuyến mãi</a>
 										<!-- DRODOWN-MEGA-MENU START -->
 										<!-- <div class="drodown-mega-menu">
 											<div class="left-mega col-xs-6">
@@ -326,7 +309,7 @@
 										<!-- DRODOWN-MEGA-MENU END -->
 									</li>
 									<li>
-										<a href="shop-gird.html">Hỗ trợ</a>
+										<a href="shop-gird.html"><img src="img/Icons/sup.png" alt="" /> Hỗ trợ</a>
 										<!-- DRODOWN-MEGA-MENU START -->
 										<!-- <div class="drodown-mega-menu">
 											<div class="left-mega col-xs-4">
@@ -459,6 +442,227 @@
 		</header>
 		<!-- MAIN-MENU-AREA END -->
     @yield('content')
+    <!-- Footer -->
+    <!-- BRAND-CLIENT-AREA START -->
+    <section class="brand-client-area">
+      <div class="container">
+        <div class="row">
+          <!-- BRAND-CLIENT-ROW START -->
+          <div class="brand-client-row">
+            <div class="center-title-area">
+              <h2 class="center-title">Công ty hỗ trợ</h2>
+            </div>
+            <div class="col-xs-12">
+              <div class="row">
+                <!-- CLIENT-CAROUSEL START -->
+                <div class="client-carousel">
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/1.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/2.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/3.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/4.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/5.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/1.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/3.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/2.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/3.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/4.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/5.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/1.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/3.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/4.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                  <!-- CLIENT-SINGLE START -->
+                  <div class="item">
+                    <div class="single-client">
+                      <a href="#">
+                        <img src="img/brand/5.png" alt="brand-client" />
+                      </a>
+                    </div>
+                  </div>
+                  <!-- CLIENT-SINGLE END -->
+                </div>
+                <!-- CLIENT-CAROUSEL END -->
+              </div>
+            </div>
+          </div>
+          <!-- BRAND-CLIENT-ROW END -->
+        </div>
+      </div>
+    </section>
+    <!-- BRAND-CLIENT-AREA END -->
+    <!-- COMPANY-FACALITY START -->
+    <section class="company-facality">
+      <div class="container">
+        <div class="row">
+          <div class="company-facality-row">
+            <!-- SINGLE-FACALITY START -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+              <div class="single-facality">
+                <div class="facality-icon">
+                  <i class="fa fa-rocket"></i>
+                </div>
+                <div class="facality-text">
+                  <h3 class="facality-heading-text">Miễn phí vận chuyển</h3>
+                  <span>Với đơn hàng trên 500K</span>
+                </div>
+              </div>
+            </div>
+            <!-- SINGLE-FACALITY END -->
+            <!-- SINGLE-FACALITY START -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+              <div class="single-facality">
+                <div class="facality-icon">
+                  <i class="fa fa-umbrella"></i>
+                </div>
+                <div class="facality-text">
+                  <h3 class="facality-heading-text">Hỗ trợ 24/7</h3>
+                  <span>Online hẳng ngày</span>
+                </div>
+              </div>
+            </div>
+            <!-- SINGLE-FACALITY END -->
+            <!-- SINGLE-FACALITY START -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+              <div class="single-facality">
+                <div class="facality-icon">
+                  <i class="fa fa-calendar"></i>
+                </div>
+                <div class="facality-text">
+                  <h3 class="facality-heading-text">Cập nhật hằng ngày</h3>
+                  <span>Hãy ghé thăm shop</span>
+                </div>
+              </div>
+            </div>
+            <!-- SINGLE-FACALITY END -->
+            <!-- SINGLE-FACALITY START -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+              <div class="single-facality">
+                <div class="facality-icon">
+                  <i class="fa fa-refresh"></i>
+                </div>
+                <div class="facality-text">
+                  <h3 class="facality-heading-text">10 ngày đổi trả</h3>
+                  <span>Hoàn tiền sản phẩm lỗi</span>
+                </div>
+              </div>
+            </div>
+            <!-- SINGLE-FACALITY END -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- COMPANY-FACALITY END -->
     <!-- FOOTER-TOP-AREA START -->
     <section class="footer-top-area">
       <div class="container">
@@ -506,7 +710,7 @@
                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-sm">
                     <!-- STATICBLOCK START -->
                     <div class="staticblock">
-                      <h2>★ ★ ★ ★ ★ </h2>
+                      <h2>★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ </h2>
                       <p>Shop thể thao sanin, Shop the thao uy tin, giày thể thao, quần áo thể thao, dụng cụ và phụ kiện thể thao, đồ thể dục, đồ bóng đá, quần áo bóng rổ,quần áo cầu lông, quần áo tennis, đồ bơi, giày đá banh Nike, Adidas, giày bóng rổ, giày chạy bộ, đặt áo đá bóng, đặt áo bóng rổ, đồng phục thể dục, áo lớp, áo trường. Nhận đặt làm in quần áo bóng đá, bóng rổ theo yêu cầu, quần áo bóng đá Thái Lan, quần áo bóng đá tay dài, áo bóng đá CLB, quốc gia, giày chạy bộ, túi đựng giày, balo thể thao, áo bó body tay dài...Chuyên cung cấp các mặt hàng thể thao theo nhu cầu - Giao hàng tận nơi </p>
                     </div>
                     <!-- STATICBLOCK END -->

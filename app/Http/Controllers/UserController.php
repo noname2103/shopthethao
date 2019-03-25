@@ -14,7 +14,11 @@ class UserController extends Controller
   {
     $loai = loaisanpham::all();
     $mon = monthethao::all();
-    return view('user_interface.index',['loai'=>$loai,'mon'=>$mon]);
+    $sanphamgiay = sanpham::where('Maloai','5')->get();
+    $sanphamgg   = sanpham::orderBy('Gia', 'asc')->Limit('7')->get();
+    $sanphammoi  = sanpham::orderBy('MaSP', 'desc')->Limit('7')->get();
+    $sanphamhot  = sanpham::orderBy('Gia', '')->Limit('5')->get();
+    return view('user_interface.index',['sanphamhot'=>$sanphamhot,'sanphammoi'=>$sanphammoi,'sanphamgg'=>$sanphamgg,'sanphamgiay'=>$sanphamgiay,'loai'=>$loai,'mon'=>$mon]);
   }
 
   // Hien giao dien trang dang ky
