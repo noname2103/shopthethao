@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class thanhvien extends Model
 {
-  protected $table="thanhvien";
+  protected $table="khachhang";
   public $timetamps = true;
   protected $primaryKey="MaTV";
 }

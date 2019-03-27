@@ -32,3 +32,5 @@ Route::get('{slug}&p{mabv}.html','UserController@xemsanpham')->name('xemsanpham'
 Route::get('danh-sach&loai{maloai}.html','UserController@danhsachsptheoloai')->name('danhsachsptheoloai');
 //Hiện danh sách sp theo mon the thao
 Route::get('danh-sach&mon{mamon}.html','UserController@danhsachsptheomon')->name('danhsachsptheomon');
+//Tim kiem
+Route::get('search',['as'=>'search','uses'=>'UserController@getSearch']);

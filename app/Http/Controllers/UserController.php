@@ -81,4 +81,14 @@ class UserController extends Controller
     $sanpham = sanpham::where('MaMon',$mamon)->get();
     return view('user_interface.list_topic',['sanpham'=>$sanpham,'loai'=>$loai,'mon'=>$mon]);
   }
+  //Tim kiem
+  public function getSearch(Request $req)
+  {
+    $product= sanpham::where('TenSP','like','%'.$req->key.'%');
+    $loai = loaisanpham::all();
+    $mon = monthethao::all();
+                    //  ->orwhere('gia',$req->key)
+                  //    ->get();
+    return view('user_interface.search',['product'=>$product, 'loai'=>$loai, 'mon'=>$mon]);
+  }
 }

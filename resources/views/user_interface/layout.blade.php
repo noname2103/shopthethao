@@ -153,15 +153,15 @@
 						<!-- HEADER-RIGHT-CALLUS END -->
 						<!-- CATEGORYS-PRODUCT-SEARCH START -->
 						<div class="categorys-product-search">
-							<form action="#" method="get" class="search-form-cat">
+							<form action="{{route('search')}}" method="get" class="search-form-cat">
 								<div class="search-product form-group">
-									<select name="catsearch" class="cat-search">
+					<!--				<select name="catsearch" class="cat-search">
                     <option value="">Mục tìm kiếm</option>
                     @foreach($loai as $l) <option value="">{{$l->TenLoai}}</option> @endforeach
                     @foreach($mon as $m) <option value="">{{$m->TenMon}}</option> @endforeach
-									</select>
-									<input type="text" class="form-control search-form" name="s" placeholder="Nhập tìm kiếm ... " />
-									<button class="search-button" value="Search" name="s" type="submit">
+									</select> -->
+									<input type="text" class="form-control search-form" name="key" placeholder="Nhập tìm kiếm ... " />
+									<button class="search-button" type="submit">
 										<i class="fa fa-search"></i>
 									</button>
 								</div>
