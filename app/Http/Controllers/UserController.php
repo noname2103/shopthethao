@@ -84,11 +84,11 @@ class UserController extends Controller
   //Tim kiem
   public function getSearch(Request $req)
   {
-    $product= sanpham::where('TenSP','like','%'.$req->key.'%');
+    $product= sanpham::where('TenSP','like','%'.$req->key.'%')
+                     ->orwhere('gia',$req->key)
+                     ->get();
     $loai = loaisanpham::all();
     $mon = monthethao::all();
-                    //  ->orwhere('gia',$req->key)
-                  //    ->get();
-    return view('user_interface.search',['product'=>$product, 'loai'=>$loai, 'mon'=>$mon]);
+    return view('user_interface.search',['product'=>$product,'loai'=>$loai,'mon'=>$mon]);
   }
 }
