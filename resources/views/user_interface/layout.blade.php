@@ -238,7 +238,7 @@
 										<!-- DROPDOWN MENU END -->
 									</li>
 									<li>
-										<a href="shop-gird.html"><img height=30 width=30 src="img/Icons/category.png" alt="" /> Danh mục sản phẩm</a>
+										<a href="#"><img height=30 width=30 src="img/Icons/category.png" alt="" /> Danh mục sản phẩm</a>
 										<!-- DRODOWN-MEGA-MENU START -->
 										<div class="drodown-mega-menu">
 											<div class="left-mega col-xs-6">
