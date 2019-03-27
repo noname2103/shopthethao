@@ -68,9 +68,7 @@
 		============================================ -->
         <link rel="stylesheet" href="css/main.css">
 
-		<!-- STYLE CSS
-		============================================ -->
-        <link rel="stylesheet" href="css/style.css">
+
 
 		<!-- RESPONSIVE CSS
 		============================================ -->
@@ -79,7 +77,9 @@
 		<!-- IE CSS
 		============================================ -->
         <link rel="stylesheet" href="css/ie.css">
-
+        <!-- STYLE CSS
+    		============================================ -->
+            <link rel="stylesheet" href="css/style.css">
 		<!-- MODERNIZR JS
 		============================================ -->
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
