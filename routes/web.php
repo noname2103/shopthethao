@@ -32,5 +32,7 @@ Route::get('gio-hang.html','UserController@giohang')->name('giohang');
 Route::get('danh-sach&loai{maloai}.html','UserController@danhsachsptheoloai')->name('danhsachsptheoloai');
 //Hiện danh sách sp theo mon the thao
 Route::get('danh-sach&mon{mamon}.html','UserController@danhsachsptheomon')->name('danhsachsptheomon');
+//Tim kiem
+Route::get('search',['as'=>'search','uses'=>'UserController@getSearch']);
 //Hien chi tiet san pham
 Route::get('chitietsanpham&sanpham{masp}.html','UserController@chitietsanpham')->name('chitietsanpham');
