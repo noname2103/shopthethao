@@ -87,7 +87,7 @@
 							<div class="product-shooting-area">
 								<div class="product-shooting-bar">
 									<!-- SHOORT-BY START -->
-									<div class="shoort-by">
+									<!-- <div class="shoort-by">
 										<label for="productShort">Sort by</label>
 										<div class="short-select-option">
 											<select name="sortby" id="productShort">
@@ -101,10 +101,10 @@
 												<option value="">Reference: Highest first</option>
 											</select>
 										</div>
-									</div>
+									</div> -->
 									<!-- SHOORT-BY END -->
 									<!-- SHOW-PAGE START -->
-									<div class="show-page">
+									<!-- <div class="show-page">
 										<label for="perPage">Show</label>
 										<div class="s-page-select-option">
 											<select name="show" id="perPage">
@@ -113,20 +113,20 @@
 											</select>
 										</div>
 										<span>per page</span>
-									</div>
+									</div> -->
 									<!-- SHOW-PAGE END -->
 									<!-- VIEW-SYSTEAM START -->
-									<div class="view-systeam">
+									<!-- <div class="view-systeam">
 										<label for="perPage">View:</label>
 										<ul>
 											<li><a href="shop-gird.html"><i class="fa fa-th-large"></i></a><br />Grid</li>
 											<li class="active"><a href="shop-list.html"><i class="fa fa-th-list"></i></a><br />List</li>
 										</ul>
-									</div>
+									</div> -->
 									<!-- VIEW-SYSTEAM END -->
 								</div>
 								<!-- PRODUCT-SHOOTING-RESULT START -->
-								<div class="product-shooting-result">
+								<!-- <div class="product-shooting-result">
 									<form action="#">
 										<button class="btn compare-button">
 											Compare (<span class="compare-value">1</span>)
@@ -155,7 +155,7 @@
 											<button class="btn showall-button">Show all</button>
 										</form>
 									</div>
-								</div>
+								</div> -->
 								<!-- PRODUCT-SHOOTING-RESULT END -->
 							</div>
 						</div>
@@ -169,8 +169,8 @@
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 											<div class="single-product-item">
 												<div class="product-image">
-														<a href="single-product.html"><img height=262 width=262 src="img/anhsp/{{$sp->HinhAnh}}" alt="product-image" /></a>
-													<a href="single-product.html" class="new-mark-box">new</a>
+														<a href="chitietsanpham&sanpham{{$sp->MaSP}}.html"><img height=262 width=262 src="img/anhsp/{{$sp->HinhAnh}}" alt="product-image" /></a>
+													<a href="chitietsanpham&sanpham{{$sp->MaSP}}.html" class="new-mark-box">new</a>
 												</div>
 											</div>
 										</div>
@@ -179,7 +179,7 @@
 												<div class="single-product-item">
 													<div class="product-info">
 														<div class="customar-comments-box">
-																<a href="single-product.html">{{$sp->TenSP}} </a>
+																<a href="chitietsanpham&sanpham{{$sp->MaSP}}.html">{{$sp->TenSP}} </a>
 															<div class="rating-box">
 																<i class="fa fa-star"></i>
 																<i class="fa fa-star"></i>
@@ -200,8 +200,8 @@
 													</div>
 													<div class="overlay-content-list">
 														<ul>
-															<li><a href="#" title="Add to cart" class="add-cart-text">Thêm vào giỏ hàng</a></li>
-															<li><a href="#" title="Quick view"><i class="fa fa-search"></i></a></li>
+															<li><a href="#" title="Giỏ hàng" class="add-cart-text">Thêm vào giỏ hàng</a></li>
+															<li><a href="chitietsanpham&sanpham{{$sp->MaSP}}.html" title="Chi tiết"><i class="fa fa-search"></i></a></li>
 															<li><a href="#" title="Add to compare"><i class="fa fa-retweet"></i></a></li>
 															<li><a href="#" title="Add to wishlist"><i class="fa fa-heart-o"></i></a></li>
 														</ul>
@@ -217,7 +217,7 @@
 						</div>
 						<!-- ALL GATEGORY-PRODUCT END -->
 						<!-- PRODUCT-SHOOTING-RESULT START -->
-						<div class="product-shooting-result product-shooting-result-border">
+						<!-- <div class="product-shooting-result product-shooting-result-border">
 							<form action="#">
 								<button class="btn compare-button">
 									Compare (<strong class="compare-value">1</strong>)
@@ -246,7 +246,7 @@
 									<button class="btn showall-button">Show all</button>
 								</form>
 							</div>
-						</div>
+						</div> -->
 						<!-- PRODUCT-SHOOTING-RESULT END -->
 					</div>
 				</div>

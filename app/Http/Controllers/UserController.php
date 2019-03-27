@@ -91,4 +91,14 @@ class UserController extends Controller
     $mon = monthethao::all();
     return view('user_interface.search',['product'=>$product,'loai'=>$loai,'mon'=>$mon]);
   }
+  //chitietsanpham
+  public function chitietsanpham($masp)
+  {
+    $loai = loaisanpham::all();
+    $mon = monthethao::all();
+    $sanphammuonxem=sanpham::where('MaMon','1')->Limit('4')->get();
+    // $sanpham = sanpham::where('MaSP',$masp)->get();
+    $sanpham = sanpham::where('MaSP',$masp)->get();
+    return view('user_interface.single_product',['sanpham'=>$sanpham,'loai'=>$loai,'mon'=>$mon,'sanphammuonxem'=>$sanphammuonxem]);
+  }
 }

@@ -27,10 +27,12 @@ Route::post('dang-nhap.html','UserController@postdangnhap')->name('postdangnhap'
 // Hien trang gio hang
 Route::get('gio-hang.html','UserController@giohang')->name('giohang');
 // Hien trang xem chi tiet san pham
-Route::get('{slug}&p{mabv}.html','UserController@xemsanpham')->name('xemsanpham');
+// Route::get('{slug}&p{mabv}.html','UserController@xemsanpham')->name('xemsanpham');
 //Hiện danh sách sp theo loai
 Route::get('danh-sach&loai{maloai}.html','UserController@danhsachsptheoloai')->name('danhsachsptheoloai');
 //Hiện danh sách sp theo mon the thao
 Route::get('danh-sach&mon{mamon}.html','UserController@danhsachsptheomon')->name('danhsachsptheomon');
 //Tim kiem
 Route::get('search',['as'=>'search','uses'=>'UserController@getSearch']);
+//Hien chi tiet san pham
+Route::get('chitietsanpham&sanpham{masp}.html','UserController@chitietsanpham')->name('chitietsanpham');
