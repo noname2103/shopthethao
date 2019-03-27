@@ -183,7 +183,7 @@
 							<div class="shopping-cart">
 								<a class="shop-link" href="cart.html" title="View my shopping cart">
 									<!-- <i class="fa fa-shopping-cart cart-icon"></i> -->
-                  <img src="img/Icons/cart.png" alt=""/>
+                  <img height=30 width=30  src="img/Icons/cart.png" alt=""/>
 									<b>Giỏ hàng</b>
 									<span class="ajax-cart-quantity"> </span>
 								</a>
@@ -233,12 +233,12 @@
 						<div class="mainmenu">
 							<nav>
 								<ul class="list-inline mega-menu">
-									<li class="active"><a href="{{route('trangchu')}}"><img src="img/Icons/home.png" alt="" /> Trang chủ</a>
+									<li class="active"><a href="{{route('trangchu')}}"><img height=30 width=30 src="img/Icons/home.png" alt="" /> Trang chủ</a>
 										<!-- DROPDOWN MENU START -->
 										<!-- DROPDOWN MENU END -->
 									</li>
 									<li>
-										<a href="shop-gird.html"><img src="img/Icons/category.png" alt="" /> Danh mục sản phẩm</a>
+										<a href="shop-gird.html"><img height=30 width=30 src="img/Icons/category.png" alt="" /> Danh mục sản phẩm</a>
 										<!-- DRODOWN-MEGA-MENU START -->
 										<div class="drodown-mega-menu">
 											<div class="left-mega col-xs-6">
@@ -265,7 +265,7 @@
 										<!-- DRODOWN-MEGA-MENU END -->
 									</li>
 									<li>
-										<a href="shop-gird.html"><img src="img/Icons/sale.png" alt=""/> Khuyến mãi</a>
+										<a href="shop-gird.html"><img height=30 width=30  src="img/Icons/sale.png" alt=""/> Khuyến mãi</a>
 										<!-- DRODOWN-MEGA-MENU START -->
 										<!-- <div class="drodown-mega-menu">
 											<div class="left-mega col-xs-6">
@@ -309,7 +309,7 @@
 										<!-- DRODOWN-MEGA-MENU END -->
 									</li>
 									<li>
-										<a href="shop-gird.html"><img src="img/Icons/sup.png" alt="" /> Hỗ trợ</a>
+										<a href="shop-gird.html"><img height=30 width=30  src="img/Icons/sup.png" alt="" /> Hỗ trợ</a>
 										<!-- DRODOWN-MEGA-MENU START -->
 										<!-- <div class="drodown-mega-menu">
 											<div class="left-mega col-xs-4">
@@ -768,10 +768,10 @@
                       <div class="single-f-widget">
                         <h2>Loại sản phẩm</h2>
                         <ul>
-                          <li><a href="shop-gird.html"><i class="fa fa-angle-double-right"></i>Giày thể thao </a></li>
-                          <li><a href="shop-gird.html"><i class="fa fa-angle-double-right"></i>Dụng cụ y tế</a></li>
-                          <li><a href="shop-gird.html"><i class="fa fa-angle-double-right"></i>Vợt</a></li>
-                          <li><a href="shop-gird.html"><i class="fa fa-angle-double-right"></i>Áo</a></li>
+                          <li><a href="danh-sach&loai5.html"><i class="fa fa-angle-double-right"></i>Giày thể thao </a></li>
+                          <li><a href="danh-sach&loai4.html"><i class="fa fa-angle-double-right"></i>Dụng cụ y tế</a></li>
+                          <li><a href="danh-sach&loai3.html"><i class="fa fa-angle-double-right"></i>Vợt</a></li>
+                          <li><a href="danh-sach&loai6.html"><i class="fa fa-angle-double-right"></i>Áo</a></li>
                         </ul>
                       </div>
                     </div>
@@ -783,10 +783,10 @@
                       <div class="single-f-widget">
                         <h2>Môn thể thao</h2>
                         <ul>
-                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Bóng đá</a></li>
-                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Bóng rổ</a></li>
-                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Tennis</a></li>
-                          <li><a href="#"><i class="fa fa-angle-double-right"></i>Cầu lông</a></li>
+                          <li><a href="danh-sach&mon1.html"><i class="fa fa-angle-double-right"></i>Bóng đá</a></li>
+                          <li><a href="danh-sach&mon2.html"><i class="fa fa-angle-double-right"></i>Bóng rổ</a></li>
+                          <li><a href="danh-sach&mon3.html"><i class="fa fa-angle-double-right"></i>Tennis</a></li>
+                          <li><a href="danh-sach&mon4.html"><i class="fa fa-angle-double-right"></i>Cầu lông</a></li>
                           <!-- <li><a href="contact-us.html"><i class="fa fa-angle-double-right"></i>Contact Us</a></li> -->
                         </ul>
                       </div>

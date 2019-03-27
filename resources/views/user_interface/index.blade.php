@@ -97,14 +97,14 @@
 								<div class="sidebar-best-seller-carousel">
 									<!-- SIDEBAR-BEST-SELLER SINGLE ITEM START -->
 									<div class="item">
-										@foreach($sanphamhot as $sph)
+										@foreach($sanphamhot as $sp)
 										<!-- SINGLE-PRODUCT-ITEM START -->
 										<div class="single-product-item">
 											<div class="sidebar-product-image">
-												<a href="single-product.html"><img height="80" width="80" src="img/anhsp/{{$sph->HinhAnh}}" alt="product-image" /></a>
+												<a href="chitietsanpham&sanpham{{$sp->MaSP}}.html"><img height="80" width="80" src="img/anhsp/{{$sp->HinhAnh}}" alt="product-image" /></a>
 											</div>
 											<div class="product-info sede-pro-info">
-												<a href="single-product.html">{{$sph->TenSP}}</a>
+												<a href="chitietsanpham&sanpham{{$sp->MaSP}}.html">{{$sp->TenSP}}</a>
 												<div class="customar-comments-box">
 													<div class="rating-box">
 														<i class="fa fa-star"></i>
@@ -115,7 +115,7 @@
 													</div>
 												</div>
 												<div class="price-box">
-													<span class="price">{{$sph->Gia}}</span>
+													<span class="price">{{$sp->Gia}}</span>
 													<!-- <span class="old-price">$27.00</span> -->
 												</div>
 											</div>
@@ -170,18 +170,18 @@
 											<div class="row">
 												<!-- HOME2-NEW-PRO-CAROUSEL START -->
 												<div class="home2-new-pro-carousel">
-													@foreach($sanphammoi as $spm)
+													@foreach($sanphammoi as $sp)
 													<!-- NEW-PRODUCT SINGLE ITEM START -->
 													<div class="item">
 														<div class="new-product">
 															<div class="single-product-item">
 																<div class="product-image">
-																	<a href="#"><img height="190" width="190" src="img/anhsp/{{$spm->HinhAnh}}" alt="product-image" /></a>
+																	<a href="chitietsanpham&sanpham{{$sp->MaSP}}.html"><img height="190" width="190" src="img/anhsp/{{$sp->HinhAnh}}" alt="product-image" /></a>
 																	<a href="#" class="new-mark-box">new</a>
 																	<div class="overlay-content">
 																		<ul>
-																			<li><a href="#" title="Quick view"><i class="fa fa-search"></i></a></li>
-																			<li><a href="#" title="Quick view"><i class="fa fa-shopping-cart"></i></a></li>
+																			<li><a href="chitietsanpham&sanpham{{$sp->MaSP}}.html" title="Chi tiết"><i class="fa fa-search"></i></a></li>
+																			<li><a href="#" title="Giỏ hàng"><i class="fa fa-shopping-cart"></i></a></li>
 																			<li><a href="#" title="Quick view"><i class="fa fa-retweet"></i></a></li>
 																			<li><a href="#" title="Quick view"><i class="fa fa-heart-o"></i></a></li>
 																		</ul>
@@ -200,9 +200,9 @@
 																			<span>3 Review(s)</span>
 																		</div>
 																	</div>
-																	<a href="single-product.html">{{$spm->TenSP}}</a>
+																	<a href="chitietsanpham&sanpham{{$sp->MaSP}}.html">{{$sp->TenSP}}</a>
 																	<div class="price-box">
-																		<span class="price">{{$spm->Gia}}</span>
+																		<span class="price">{{$sp->Gia}}</span>
 																	</div>
 																</div>
 															</div>
@@ -246,12 +246,12 @@
 												<div class="new-product">
 													<div class="single-product-item">
 														<div class="product-image">
-															<a href="#"><img height="200" width="200" src="img/anhsp/{{$sp->HinhAnh}}" alt="product-image" /></a>
+															<a href="chitietsanpham&sanpham{{$sp->MaSP}}.html"><img height="200" width="200" src="img/anhsp/{{$sp->HinhAnh}}" alt="product-image" /></a>
 															<a href="#" class="new-mark-box">hot</a>
 															<div class="overlay-content">
 																<ul>
-																	<li><a href="#" title="Quick view"><i class="fa fa-search"></i></a></li>
-																	<li><a href="#" title="Quick view"><i class="fa fa-shopping-cart"></i></a></li>
+																	<li><a href="chitietsanpham&sanpham{{$sp->MaSP}}.html" title="Chi tiết"><i class="fa fa-search"></i></a></li>
+																	<li><a href="#" title="Giỏ hàng"><i class="fa fa-shopping-cart"></i></a></li>
 																	<li><a href="#" title="Quick view"><i class="fa fa-retweet"></i></a></li>
 																	<li><a href="#" title="Quick view"><i class="fa fa-heart-o"></i></a></li>
 																</ul>
@@ -270,7 +270,7 @@
 																	<span>1 Review(s)</span>
 																</div>
 															</div>
-															<a href="single-product.html">{{$sp->TenSP}}</a>
+															<a href="chitietsanpham&sanpham{{$sp->MaSP}}.html">{{$sp->TenSP}}</a>
 															<div class="price-box">
 																<span class="price">{{$sp->Gia}}</span>
 																<span class="old-price">$30.51</span>
@@ -331,12 +331,12 @@
 								<div class="new-product">
 									<div class="single-product-item">
 										<div class="product-image">
-											<a href="#"><img height="200" width="200" src="img/anhsp/{{$sp->HinhAnh}}" alt="product-image" /></a>
+											<a href="chitietsanpham&sanpham{{$sp->MaSP}}.html"><img height="200" width="200" src="img/anhsp/{{$sp->HinhAnh}}" alt="product-image" /></a>
 											<a href="#" class="new-mark-box">new</a>
 											<div class="overlay-content">
 												<ul>
-													<li><a href="#" title="Quick view"><i class="fa fa-search"></i></a></li>
-													<li><a href="#" title="Quick view"><i class="fa fa-shopping-cart"></i></a></li>
+													<li><a href="chitietsanpham&sanpham{{$sp->MaSP}}.html" title="Chi tiết"><i class="fa fa-search"></i></a></li>
+													<li><a href="#" title="Giỏ hàng"><i class="fa fa-shopping-cart"></i></a></li>
 													<li><a href="#" title="Quick view"><i class="fa fa-retweet"></i></a></li>
 													<li><a href="#" title="Quick view"><i class="fa fa-heart-o"></i></a></li>
 												</ul>
@@ -355,7 +355,7 @@
 													<span>1 Review(s)</span>
 												</div>
 											</div>
-											<a href="single-product.html">{{$sp->TenSP}}</a>
+											<a href="chitietsanpham&sanpham{{$sp->MaSP}}.html">{{$sp->TenSP}}</a>
 											<div class="price-box">
 												<span class="price">{{$sp->Gia}}</span>
 												<span class="old-price">$30.51</span>
