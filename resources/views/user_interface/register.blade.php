@@ -17,35 +17,46 @@
 					</div>
 				</div>
 				<div class="row">
+
+					@if(count($errors)>0)
+						<div class="alert alert-danger">
+							@foreach($errors->all() as $err)
+							{{$err}}
+							@endforeach
+						</div>
+					@endif
+					@if(Session::has('thanhcong'))
+						<div class="alert alert-success">{{Section::get('thanhcong')}}</div>
+					@endif
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<h2 class="page-title">Tạo tài khoản</h2>
 					</div>
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<!-- PERSONAL-INFOMATION START -->
 						<div class="personal-infomation">
-							<form class="primari-box personal-info-box" id="personalinfo" method="post" action="{{route('postdangky')}}">
+							<form class="primari-box personal-info-box" id="personalinfo" method="POST" action="{{route('postdangky')}}">
 								@csrf
 								<h3 class="box-subheading">THÔNG TIN CÁ NHÂN</h3>
 								<div class="personal-info-content">
 									<div class="form-group primary-form-group p-info-group">
 										<label for="firstname">Tên của bạn <sup>*</sup></label>
-										<input type="text" value="" name="HoTen" id="firstname" class="form-control input-feild">
+										<input type="text" value="" name="TenKH"  class="form-control input-feild">
 									</div>
 									<div class="form-group primary-form-group p-info-group">
 										<label for="email">Email <sup>*</sup></label>
-										<input type="email" value="" name="Email" id="email" class="form-control input-feild">
+										<input type="email" value="" name="Email"  class="form-control input-feild">
 									</div>
 									<div class="form-group primary-form-group p-info-group">
 										<label for="lastname">Số điện thoại </label>
-										<input type="text" value="" name="SDT" id="lastname" class="form-control input-feild">
+										<input type="text" value="" name="SDT"  class="form-control input-feild">
 									</div>
 									<div class="form-group primary-form-group p-info-group">
 										<label for="lastname">Địa chỉ </label>
-										<input type="text" value="" name="DiaChi" id="lastname" class="form-control input-feild">
+										<input type="text" value="" name="DiaChi"  class="form-control input-feild">
 									</div>
 									<div class="form-group primary-form-group p-info-group">
 										<label for="password">Mật khẩu <sup>*</sup></label>
-										<input type="password" value="" name="MatKhau" id="password" class="form-control input-feild">
+										<input type="password" value="" name="MatKhau"  class="form-control input-feild">
 										<span class="min-pass">(Tối đa 5 ký tự)</span>
 									</div>
 									<div class="form-group primary-form-group p-info-group">

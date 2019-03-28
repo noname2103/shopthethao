@@ -19,7 +19,7 @@ Route::get('/','UserController@trangchu')->name('trangchu');
 // Hien trang dang ky nguoi dung
 Route::get('dang-ky.html','UserController@getdangky')->name('getdangky');
 // Xu ly thong tin dang ky thanh vien
-Route::post('dang-ky.html','UserController@postdangky')->name('postdangky');
+Route::post('dang-ky','UserController@postdangky')->name('postdangky');
 // Hien trang dang nhap nguoi dung
 Route::get('dang-nhap.html','UserController@getdangnhap')->name('getdangnhap');
 // Xu ly thong tin dang nhap thanh vien

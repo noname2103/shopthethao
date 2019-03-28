@@ -7,7 +7,11 @@ use App\thanhvien;
 use App\loaisanpham;
 use App\monthethao;
 use App\sanpham;
+
+use Hash;
+
 use App\giohang;
+
 class UserController extends Controller
 {
   // Hien trang chu
@@ -22,13 +26,44 @@ class UserController extends Controller
     return view('user_interface.index',['sanphamhot'=>$sanphamhot,'sanphammoi'=>$sanphammoi,'sanphamgg'=>$sanphamgg,'sanphamgiay'=>$sanphamgiay,'loai'=>$loai,'mon'=>$mon]);
   }
 
-  // Hien giao dien trang dang ky
   public function getdangky()
   {
     $loai = loaisanpham::all();
     $mon = monthethao::all();
-    return view('user_interface.register',['loai'=>$loai,'mon'=>$mon]);
+    return view('user_interface.register',['loai'=>$loai, 'mon'=>$mon]);
   }
+
+  // Hien giao dien trang dang ky
+  //public function postdangky(Request $req){
+  //   $this->validate(
+  // [
+  //   //$loai = loaisanpham::all();
+  //   //$mon = monthethao::all();
+  //   //return view('user_interface.register',['loai'=>$loai,'mon'=>$mon]);
+  //   'Email'=>'required|email|unique:users,email',
+  //   'MatKhau'=>'required|min:6|max:20',
+  //   'SDT'=>'required|min:10|max:11',
+  // ],
+  // [
+  //   'Email.required'=>'Vui lòng nhập Email',
+  //   'Email.email'=>'Không đúng định dạng email',
+  //   'Email.unique'=>'Email đã có người sử dụng',
+  //   'MatKhau.required'=>'Vui lòng nhập mật khẩu',
+  //   'SDT.min'=>'SDT có ít nhất 10 số',
+  //   'SDT.max'=>'SDT tối đa 10 số',
+  //   'MatKhau.min'=>'Mật Khẩu phải có ít nhất 6 kí tự',
+  //   'MatKhau.max'=>'Mật Khẩu phải có ít nhất 6 kí tự',
+  // ]);
+//   $user=new thanhvien();
+//   $user->TenKH=$req->TenKH;
+//   $user->Email=$req->Email;
+//   $user->SDT=$req->SDT;
+//   $user->MatKhau=Hash::make($req->MatKhau);
+//   $user->DiaChi=$req->DiaChi;
+//   $user->save();
+//   //return redirect()->back()->with('thanhcong','Đã tạo tài khoản thành công;');
+//   return redirect()->route('getdangnhap');
+// }
 //up csdl thanh vien moi
   public function postdangky(Request $request)
   {
