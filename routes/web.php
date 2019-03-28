@@ -46,11 +46,11 @@ Route::get('chitietsanpham&sanpham{masp}.html','UserController@chitietsanpham')-
 
 
 // Phan admin
-Route::get('bang-quan-tri.html','AdminController@dashboard')->name('dashboard');
+Route::get('bang-quan-tri.html','AdminController@dashboard')->name('dashboard')->middleware('AdminMiddleware');;
 // Trang dang nhap bang quan tri admin
 Route::get('dang-nhap-admin-panel.html','AdminController@getdangnhapadmin')->name('getdanhnhapadmin');
 // Xu ly su kien dang nhap bang quan tri cua admin
-Route::get('dangnhapadmin','AdminController@postdangnhapadmin')->name('postdangnhapadmin');
+Route::post('dangnhapadmin','AdminController@postdangnhapadmin')->name('postdangnhapadmin');
 //------------------- Noi dung phan quan ly san pham -------------------------------//
 // Xem danh sach cac san pham
 Route::get('danh-sach-san-pham.html','AdminController@danhsachsp')->name('danhsachsp');

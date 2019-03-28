@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\sanpham;
 use App\loaisanpham;
 use App\monthethao;
+use App\admin;
 class AdminController extends Controller
 {
     public function dashboard()
@@ -18,7 +19,23 @@ class AdminController extends Controller
     {
       return view('admin_panel.login');
     }
-
+    // Xu ly dang nhap admin
+    public function postdangnhapadmin(Request $request)
+    {
+      $admin = admin::where([
+        ['Ten',$request->taikhoan],
+        ['MatKhau',$request->matkhau]
+      ])->first();
+      if(isset($admin))
+      {
+        session()->put('adminlogin',$admin->MaAdmin);
+        return redirect()->route('dashboard');
+      }
+      else
+      {
+        return redirect()->back();
+      }
+    }
     // Trang danh sach san pham
     public function danhsachsp()
     {
@@ -72,7 +89,7 @@ class AdminController extends Controller
       $sanpham = sanpham::where('MaSP',$masp)->first();
       $loai = loaisanpham::all();
       $mon = monthethao::all();
-      return view('admin_panel.topic.edit_topic',['sanpham'=>$sanpham]);
+      return view('admin_panel.topic.edit_topic',['sanpham'=>$sanpham,'loai'=>$loai,'mon'=>$mon]);
     }
 
     // xu ly sua mot san pham

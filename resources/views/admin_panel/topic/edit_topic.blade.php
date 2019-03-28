@@ -27,24 +27,35 @@
                                       </div>
                                       <div class="col-lg-12 mt-2">
                                         <span>Hình ảnh:</span>
-                                        <input type="text" name="hinhanh" placeholder="Nhập email.." class="form-control" />
+                                        <input type="file" name="hinhanh" placeholder="Nhập email.." class="form-control" />
+                                        <img src="img/anhsp/{{$sanpham->HinhAnh}}" alt="" style="width: 100px;">
                                       </div>
-                                      <div class="col-lg-12 mt-2">
-                                        <span>Nơi sản xuất:</span>
-                                        <input type="text" name="noisx" placeholder="Nhập số điện thoại.." value="{{$sanpham->NoiSx}}" class="form-control" />
-                                      </div>
+
                                       <div class="col-lg-12 mt-2">
                                         <span>Giá:</span>
                                         <input type="number" name="gia" placeholder="Nhập mật khẩu.." value="{{$sanpham->Gia}}" class="form-control" />
                                       </div>
                                       <div class="col-lg-12 mt-2">
-                                        <span>Mã môn:</span>
-                                        <input type="text" name="mamon" placeholder="Nhập địa chỉ.." value="{{$sanpham->MaMon}}" class="form-control" />
+                                        <span>Mã loại:</span>
+                                        <select class="form-control" name="maloai">
+                                        @foreach($loai as $li)
+                                          @if($li->MaLoai == $sanpham->MaLoai)
+                                          <option value="{{$li->MaLoai}}" selected>{{$li->TenLoai}}</option>
+                                          @endif
+                                          <option value="{{$li->MaLoai}}">{{$li->TenLoai}}</option>
+                                        @endforeach
+                                        </select>
                                       </div>
                                       <div class="col-lg-12 mt-2">
-                                        <span>Mã Loại:</span>
-                                        <input type="text" name="maloai" placeholder="Nhập địa chỉ.." value="{{$sanpham->MaLoai}}" class="form-control" />
-                                      </div>
+                                        <span>Mã Môn:</span>
+                                        <select class="form-control" name="mamon">
+                                        @foreach($mon as $mn)
+                                          @if($mn->MaMon == $sanpham->MaMon)
+                                          <option value="{{$mn->MaMon}}" selected>{{$mn->TenMon}}</option>
+                                          @endif
+                                          <option value="{{$mn->MaMon}}">{{$mn->TenMon}}</option>
+                                        @endforeach
+                                      </select>
                                       <div class="col-lg-12 mt-2">
                                         <input type="submit" name="submit" value="Chấp nhận" class="btn btn-success" />
                                       </div>
