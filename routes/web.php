@@ -19,7 +19,7 @@ Route::get('/','UserController@trangchu')->name('trangchu');
 // Hien trang dang ky nguoi dung
 Route::get('dang-ky.html','UserController@getdangky')->name('getdangky');
 // Xu ly thong tin dang ky thanh vien
-Route::post('dang-ky.html','UserController@postdangky')->name('postdangky');
+Route::post('dang-ky','UserController@postdangky')->name('postdangky');
 // Hien trang dang nhap nguoi dung
 Route::get('dang-nhap.html','UserController@getdangnhap')->name('getdangnhap');
 // Xu ly thong tin dang nhap thanh vien
@@ -45,7 +45,8 @@ Route::get('bang-quan-tri.html','AdminController@dashboard')->name('dashboard');
 Route::get('dang-nhap-admin-panel.html','AdminController@getdangnhapadmin')->name('getdanhnhapadmin');
 // Xu ly su kien dang nhap bang quan tri cua admin
 Route::get('dangnhapadmin','AdminController@postdangnhapadmin')->name('postdangnhapadmin');
-//------------------- Noi dung phan quan ly san pham -------------------------------//
+//------------------- Noi dung phan quan ly san pham -----------
+//
 // Xem danh sach cac san pham
 Route::get('danh-sach-san-pham.html','AdminController@danhsachsp')->name('danhsachsp');
 // Trang them mot san pham
