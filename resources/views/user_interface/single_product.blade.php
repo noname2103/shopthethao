@@ -1,6 +1,10 @@
 @extends('user_interface.layout')
 
 @section('content')
+<div class="" id="alert" style="position: fixed; top:35%; right:30%; z-index: 9999;background-color:rgba(0,0,0,0.7);padding: 30px; border-radius: 5px;display:none;">
+	<img src="img/success.png" alt="thanhcong" style="width: 50px;">
+	<span style="color:white; font-size: 25px;">Đã thêm sản phẩm vào giỏ hàng</span>
+</div>
 		<!-- MAIN-CONTENT-SECTION START -->
 		<section class="main-content-section">
 			<div class="container">
@@ -158,8 +162,22 @@
 										<a class="color-blue" href="#"><span></span></a>
 									</div> -->
 									<div class="single-product-add-cart">
-										<a class="add-cart-text" title="Add to cart" href="#">Thêm vào giỏ hàng</a>
+										<a class="add-cart-text" title="Add to cart" id="addsp{{$sp->MaSP}}">Thêm vào giỏ hàng</a>
 									</div>
+									<script type="text/javascript">
+										$(document).ready(function(){
+											$("#addsp{{$sp->MaSP}}").click(function(){
+												$.get('addsp{{$sp->MaSP}}', function(data){
+													$("#alert").show();
+													setTimeout(function(){
+														$("#alert").hide(1000)
+														//alert("Chào mừng bạn đến với freetuts.net");
+													}, 3000);
+													//alert(data);
+												});
+											});
+										});
+									</script>
                   @endforeach
 								</div>
 							</div>

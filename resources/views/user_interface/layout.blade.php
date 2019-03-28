@@ -10,6 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
 		<!-- Favicon
 		============================================ -->
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
@@ -83,6 +84,9 @@
 		<!-- MODERNIZR JS
 		============================================ -->
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+
+        </script>
     </head>
     <body class="index-2">
         <!--[if lt IE 8]>
@@ -122,10 +126,15 @@
 							<nav>
 								<ul class="list-inline">
 									<!-- <li><a href="checkout.html">Check Out</a></li> -->
-									<li><a href="my-account.html">Tài khoản</a></li>
-									<li><a href="cart.html">Giỏ hàng</a></li>
-									<li><a href="{{route('getdangnhap')}}">Đăng nhập</a></li>
-                  <li><a href="{{route('getdangky')}}">Đăng ký</a></li>
+
+                  @if(empty(session('iduser')))
+                    <li><a href="{{route('getdangnhap')}}">Đăng nhập</a></li>
+                    <li><a href="{{route('getdangky')}}">Đăng ký</a></li>
+                  @else
+                    <li><a href="my-account.html">Tài khoản</a></li>
+									  <li><a href="{{route('giohang')}}">Giỏ hàng</a></li>
+                    <li><a >Xin chào <?php echo session('username'); ?></a></li>
+                  @endif
 								</ul>
 							</nav>
 						</div>
@@ -157,8 +166,7 @@
 								<div class="search-product form-group">
 					<!--				<select name="catsearch" class="cat-search">
                     <option value="">Mục tìm kiếm</option>
-                    @foreach($loai as $l) <option value="">{{$l->TenLoai}}</option> @endforeach
-                    @foreach($mon as $m) <option value="">{{$m->TenMon}}</option> @endforeach
+
 									</select> -->
 									<input type="text" class="form-control search-form" name="key" placeholder="Nhập tìm kiếm ... " />
 									<button class="search-button" type="submit">
@@ -181,7 +189,7 @@
 					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 pull-right shopingcartarea">
 						<div class="shopping-cart-out pull-right">
 							<div class="shopping-cart">
-								<a class="shop-link" href="cart.html" title="View my shopping cart">
+								<a class="shop-link" href="{{route('giohang')}}" title="View my shopping cart">
 									<!-- <i class="fa fa-shopping-cart cart-icon"></i> -->
                   <img height=30 width=30  src="img/Icons/cart.png" alt=""/>
 									<b>Giỏ hàng</b>
@@ -842,7 +850,6 @@
     <!-- JS
     ===============================================-->
     <!-- jquery js -->
-    <script src="js/vendor/jquery-1.11.3.min.js"></script>
 
     <!-- fancybox js -->
         <script src="js/jquery.fancybox.js"></script>

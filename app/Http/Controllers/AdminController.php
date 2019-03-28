@@ -22,7 +22,7 @@ class AdminController extends Controller
     // Trang danh sach san pham
     public function danhsachsp()
     {
-      $sanpham = sanpham::all();
+      $sanpham = sanpham::orderBy('MaSP','desc')->get();
       return view('admin_panel.topic.list_topic',['sanpham'=>$sanpham]);
     }
 
@@ -39,10 +39,28 @@ class AdminController extends Controller
     {
       $sp = new sanpham();
       $sp->TenSP = $request->tensp;
-      $sp->NoiSX = $reuqest->noisx;
-      $sp->Gia = $reuqest->gia;
+      //$sp->NoiSX = $request->noisx;
+      $sp->Gia = $request->gia;
       $sp->MaMon = $request->mamon;
       $sp->MaLoai = $request->maloai;
+      if($request->hasFile('hinhanh'))
+      {
+          $file = $request -> file('hinhanh');
+          $duoi = $file->getClientOriginalExtension();
+          if($duoi !='jpg' && $duoi !='png')
+          {
+              return redirect()->route('dangbaiviet')->with('thongbao','chỉ được chọn file đuôi jpg hoặc png');
+          }
+
+          $name = $file->getClientOriginalName();
+          $Hinh= str_random(5)."_".$name;
+          while(file_exists("img/anhsp".$Hinh))
+          {
+              $Hinh= str_random(5)."_".$name;
+          }
+          $file->move("img/anhsp",$Hinh);
+          $sp->HinhAnh = $Hinh;
+      }
       $sp->save();
 
       return redirect()->route('danhsachsp');
@@ -52,7 +70,8 @@ class AdminController extends Controller
     public function getsuasp($masp)
     {
       $sanpham = sanpham::where('MaSP',$masp)->first();
-
+      $loai = loaisanpham::all();
+      $mon = monthethao::all();
       return view('admin_panel.topic.edit_topic',['sanpham'=>$sanpham]);
     }
 

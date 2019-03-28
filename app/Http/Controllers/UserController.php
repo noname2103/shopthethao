@@ -7,6 +7,7 @@ use App\thanhvien;
 use App\loaisanpham;
 use App\monthethao;
 use App\sanpham;
+use App\giohang;
 class UserController extends Controller
 {
   // Hien trang chu
@@ -48,9 +49,12 @@ class UserController extends Controller
     $tv = thanhvien::where([
       ['Email',$email],
       ['MatKhau',$matkhau]
-    ])->get();
+    ])->first();
     if(isset($tv))
     {
+      session()->put('iduser',$tv->MaTV);
+      session()->put('username',$tv->TenKH);
+      session()->put('email',$tv->Email);
       return redirect()->route('trangchu');
     }
     else {
@@ -100,5 +104,70 @@ class UserController extends Controller
     // $sanpham = sanpham::where('MaSP',$masp)->get();
     $sanpham = sanpham::where('MaSP',$masp)->get();
     return view('user_interface.single_product',['sanpham'=>$sanpham,'loai'=>$loai,'mon'=>$mon,'sanphammuonxem'=>$sanphammuonxem]);
+  }
+
+  // xem gio hang
+  public function giohang()
+  {
+    $loai = loaisanpham::all();
+    $mon = monthethao::all();
+    $giohang = giohang::where('MaTV',session('iduser'))->get();
+    $sanpham = sanpham::all();
+    return view('user_interface.cart',['loai'=>$loai,'mon'=>$mon,'giohang'=>$giohang,'sanpham'=>$sanpham]);
+  }
+
+  // Thêm sản phẩm vào giỏ hàng
+  public function themgiohang($masp)
+  {
+    // if(empty(session('iduser')))
+    // {
+    //   return redirect()->route('getdangnhap');
+    // }
+    // else
+    // {
+    //   return $masp;
+    // }
+    $giohang = giohang::where([
+      ['MaSP',$masp],
+      ['MaTV',session('iduser')]
+    ])->first();
+     $sanpham = sanpham::where('MaSP',$masp)->first();
+    if(isset($giohang))
+    {
+      giohang::where([
+        ['MaSP',$masp],
+        ['MaTV',session('iduser')]
+      ])->update([
+        'SoLuong'=>$giohang->SoLuong+1,
+        'TongGia'=>$giohang->SoLuong*$sanpham->Gia
+      ]);
+    }
+    else
+    {
+      $giohang = new giohang();
+      $giohang->MaSP = $masp;
+      $giohang->MaTV = session('iduser');
+      $giohang->SoLuong = 1;
+      $giohang->TongGia = $sanpham->Gia;
+      $giohang->save();
+    }
+    return "thêm thành công";
+  }
+
+  public function xoagiohang($magh)
+  {
+    giohang::where('MaGH',$magh)->delete();
+    return "thanhg công";
+  }
+
+  public function themsoluong( $magh, $soluong, $dongia)
+  {
+    giohang::where('MaGH',$magh)->update([
+      'SoLuong'=>$soluong,
+      'TongGia'=>$dongia*$soluong
+    ]);
+    $giohang = giohang::where('MaGH',$magh)->first();
+    $tonggia = $giohang->TongGia;
+    return $tonggia;
   }
 }

@@ -160,7 +160,7 @@
                                 <a href="#"><i class="fa fa-fw" aria-hidden="true" title="Copy to use shopping-bag"></i> Sản phẩm<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="list_product.php"><i class="fa fa-shopping-bag"></i> Danh sách sản phẩm</a>
+                                        <a href="{{route('danhsachsp')}}"><i class="fa fa-shopping-bag"></i> Danh sách sản phẩm</a>
                                     </li>
                                     <li>
                                         <a href="add_product.php"><i class="fa-shopping-bag"></i> Thêm sản phẩm mới</a>
