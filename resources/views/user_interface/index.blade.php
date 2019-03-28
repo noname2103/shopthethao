@@ -1,6 +1,10 @@
 @extends('user_interface.layout')
 
 @section('content')
+	<div class="" id="alert" style="position: fixed; top:35%; right:30%; z-index: 9999;background-color:rgba(0,0,0,0.7);padding: 30px; border-radius: 5px;display:none;">
+		<img src="img/success.png" alt="thanhcong" style="width: 50px;">
+		<span style="color:white; font-size: 25px;">Đã thêm sản phẩm vào giỏ hàng</span>
+	</div>
 		<!-- HEADER-BOTTOM-AREA START -->
 		<section class="header-bottom-area">
 			<div class="container">
@@ -181,10 +185,24 @@
 																	<div class="overlay-content">
 																		<ul>
 																			<li><a href="chitietsanpham&sanpham{{$sp->MaSP}}.html" title="Chi tiết"><i class="fa fa-search"></i></a></li>
-																			<li><a href="#" title="Giỏ hàng"><i class="fa fa-shopping-cart"></i></a></li>
+																			<li><a id="addsp{{$sp->MaSP}}" title="Giỏ hàng"><i class="fa fa-shopping-cart"></i></a></li>
 																			<li><a href="#" title="Quick view"><i class="fa fa-retweet"></i></a></li>
 																			<li><a href="#" title="Quick view"><i class="fa fa-heart-o"></i></a></li>
 																		</ul>
+																		<script type="text/javascript">
+																			$(document).ready(function(){
+																				$("#addsp{{$sp->MaSP}}").click(function(){
+																					$.get('addsp{{$sp->MaSP}}', function(data){
+																						$("#alert").show();
+																						setTimeout(function(){
+																							$("#alert").hide(1000)
+																							//alert("Chào mừng bạn đến với freetuts.net");
+																						}, 3000);
+																						//alert(data);
+																					});
+																				});
+																			});
+																		</script>
 																	</div>
 																</div>
 																<div class="product-info">
@@ -251,7 +269,7 @@
 															<div class="overlay-content">
 																<ul>
 																	<li><a href="chitietsanpham&sanpham{{$sp->MaSP}}.html" title="Chi tiết"><i class="fa fa-search"></i></a></li>
-																	<li><a href="#" title="Giỏ hàng"><i class="fa fa-shopping-cart"></i></a></li>
+																	<li><a id="addsp{{$sp->MaSP}}" title="Giỏ hàng"><i class="fa fa-shopping-cart"></i></a></li>
 																	<li><a href="#" title="Quick view"><i class="fa fa-retweet"></i></a></li>
 																	<li><a href="#" title="Quick view"><i class="fa fa-heart-o"></i></a></li>
 																</ul>
@@ -279,6 +297,20 @@
 													</div>
 												</div>
 											</div>
+											<script type="text/javascript">
+												$(document).ready(function(){
+													$("#addsp{{$sp->MaSP}}").click(function(){
+														$.get('addsp{{$sp->MaSP}}', function(data){
+															$("#alert").show();
+															setTimeout(function(){
+																$("#alert").hide(1000)
+																//alert("Chào mừng bạn đến với freetuts.net");
+															}, 3000);
+															//alert(data);
+														});
+													});
+												});
+											</script>
 											<!-- NEW-PRODUCT SINGLE ITEM END -->
 											@endforeach
 										</div>
@@ -336,7 +368,7 @@
 											<div class="overlay-content">
 												<ul>
 													<li><a href="chitietsanpham&sanpham{{$sp->MaSP}}.html" title="Chi tiết"><i class="fa fa-search"></i></a></li>
-													<li><a href="#" title="Giỏ hàng"><i class="fa fa-shopping-cart"></i></a></li>
+													<li><a id="addsp{{$sp->MaSP}}" title="Giỏ hàng"><i class="fa fa-shopping-cart"></i></a></li>
 													<li><a href="#" title="Quick view"><i class="fa fa-retweet"></i></a></li>
 													<li><a href="#" title="Quick view"><i class="fa fa-heart-o"></i></a></li>
 												</ul>
@@ -364,6 +396,20 @@
 									</div>
 								</div>
 							</div>
+							<script type="text/javascript">
+								$(document).ready(function(){
+									$("#addsp{{$sp->MaSP}}").click(function(){
+										$.get('addsp{{$sp->MaSP}}', function(data){
+											$("#alert").show();
+											setTimeout(function(){
+												$("#alert").hide(1000)
+												//alert("Chào mừng bạn đến với freetuts.net");
+											}, 3000);
+											//alert(data);
+										});
+									});
+								});
+							</script>
 							<!-- NEW-PRODUCT SINGLE ITEM END -->
 							@endforeach
 						</div>
@@ -398,4 +444,7 @@
 		<!-- LATEST-NEWS-AREA START -->
 
 		<!-- LATEST-NEWS-AREA END -->
+		<script type="text/javascript">
+
+		</script>
 @endsection

@@ -26,7 +26,13 @@ Route::get('dang-nhap.html','UserController@getdangnhap')->name('getdangnhap');
 Route::post('dang-nhap.html','UserController@postdangnhap')->name('postdangnhap');
 // Hien trang gio hang
 Route::get('gio-hang.html','UserController@giohang')->name('giohang');
+// Them san pham vao gio hang
+Route::get('addsp{masp}','UserController@themgiohang')->name('themgiohang');
+
+// Xoa san pham khoi gio hang
+Route::get('xoagiohang{magh}','UserController@xoagiohang')->name('xoagiohang');
 // Hien trang xem chi tiet san pham
+Route::get('themsoluong{magh}&{soluong}&{dongia}','UserController@themsoluong')->name('themsoluong');
 // Route::get('{slug}&p{mabv}.html','UserController@xemsanpham')->name('xemsanpham');
 //Hiện danh sách sp theo loai
 Route::get('danh-sach&loai{maloai}.html','UserController@danhsachsptheoloai')->name('danhsachsptheoloai');
