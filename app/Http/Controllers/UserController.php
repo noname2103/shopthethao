@@ -68,7 +68,7 @@ class UserController extends Controller
   public function postdangky(Request $request)
   {
     $thanhvien = new thanhvien();
-    $thanhvien->TenKH = $request->HoTen;
+    $thanhvien->TenKH = $request->TenKH;
     $thanhvien->Email = $request->Email;
     $thanhvien->SDT = $request->SDT;
     $thanhvien->MatKhau = $request->MatKhau;

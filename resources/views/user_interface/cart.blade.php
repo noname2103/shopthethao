@@ -55,18 +55,19 @@
 								<!-- TABLE HEADER START -->
 								<thead>
 									<tr>
-										<th class="cart-product">Product</th>
-										<th class="cart-description">Description</th>
-										<th class="cart-avail text-center">Availability</th>
-										<th class="cart-unit text-right">Unit price</th>
-										<th class="cart_quantity text-center">Qty</th>
-										<th class="cart-delete">&nbsp;</th>
-										<th class="cart-total text-right">Total</th>
+										<th class="cart-product">Sản phẩm</th>
+										<th class="cart-description">Chi tiết</th>
+										<th class="cart-avail text-center">Tình trạng</th>
+										<th class="cart-unit text-right">Đơn giá</th>
+										<th class="cart_quantity text-center">Số lượng</th>
+										<th class="cart-delete">Tác vụ</th>
+										<th class="cart-total text-right">Tổng giá</th>
 									</tr>
 								</thead>
 								<!-- TABLE HEADER END -->
 								<!-- TABLE BODY START -->
 								<tbody>
+									<?php $tongtien = 0; ?>
 									@foreach($giohang as $gh)
 										@foreach($sanpham as $sp)
 											@if($gh->MaSP == $sp->MaSP)
@@ -80,10 +81,10 @@
 											<small>SKU : demo_1</small>
 											<small><a href="#">Size : S, Color : Orange</a></small>
 										</td>
-										<td class="cart-avail"><span class="label label-success">In stock</span></td>
+										<td class="cart-avail"><span class="label label-success">Trong kho</span></td>
 										<td class="cart-unit">
 											<ul class="price text-right">
-												<li class="price" id="dongia{{$gh->MaGH}}">{{$sp->Gia}}</li>
+												<li class="price" id="dongia{{$gh->MaGH}}">{{$sp->Gia}} VNĐ</li>
 											</ul>
 										</td>
 										<td class="cart_quantity text-center">
@@ -97,7 +98,8 @@
 											</span>
 										</td>
 										<td class="cart-total">
-											<span class="price" id="tonggia{{$gh->MaGH}}">{{$gh->TongGia}}</span>
+											<span class="price" id="tonggia{{$gh->MaGH}}">{{$gh->TongGia}} VNĐ</span>
+											<?php $tongtien += $gh->TongGia ?>
 										</td>
 									</tr>
 									<script type="text/javascript">
@@ -130,7 +132,7 @@
 								<!-- TABLE BODY END -->
 								<!-- TABLE FOOTER START -->
 								<tfoot>
-									<tr class="cart-total-price">
+									<!-- <tr>
 										<td class="cart_voucher" colspan="3" rowspan="4"></td>
 										<td class="text-right" colspan="3">Total products (tax excl.)</td>
 										<td id="total_product" class="price" colspan="1">$76.46</td>
@@ -139,16 +141,16 @@
 										<td class="text-right" colspan="3">Total shipping</td>
 										<td id="total_shipping" class="price" colspan="1">$5.00</td>
 									</tr>
-									<tr>
-										<td class="text-right" colspan="3">Total vouchers (tax excl.)</td>
+									<tr> -->
+										<!-- <td class="text-right" colspan="3">Total vouchers (tax excl.)</td>
 										<td class="price" colspan="1">$0.00</td>
-									</tr>
-									<tr>
+									</tr> -->
+									<tr  class="cart-total-price">
 										<td class="total-price-container text-right" colspan="3">
-											<span>Total</span>
+											<span>Tổng tiền</span>
 										</td>
-										<td id="total-price-container" class="price" colspan="1">
-											<span id="total-price">$76.46</span>
+										<td id="total-price-container" class="price" colspan="4">
+											<span id="total-price">{{$tongtien}} VNĐ</span>
 										</td>
 									</tr>
 								</tfoot>
